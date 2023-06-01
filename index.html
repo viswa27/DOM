@@ -110,7 +110,12 @@
         &lt;script>
             function flex() {
                 let flex = document.getElementById("main");
-                flex.style.flexDirection = "column"; 
+                if(flex.style.flexDirection === "row"){
+                    flex.style.flexDirection = "column";
+                }
+                else{
+                    flex.style.flexDirection = "row";
+                }
             }
         &lt;/script>
     </pre>

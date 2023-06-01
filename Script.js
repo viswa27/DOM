@@ -22,7 +22,12 @@ console.log(q6);
 
 function flex() {
     let flex = document.getElementById("main");
-    flex.style.flexDirection = "column"; 
+    if(flex.style.flexDirection === "row"){
+        flex.style.flexDirection = "column";
+    }
+    else{
+        flex.style.flexDirection = "row";
+    }
 }
 
 function clock(){
