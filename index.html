@@ -142,9 +142,14 @@
                 let hour = time.getHours();
                 let minutes = time.getMinutes();
                 let seconds = time.getSeconds();
+                let amPm = "AM";
+                if(hour > 12){
+                    hour -= 12;
+                    amPm = "PM"
+                }
                 let clock = hour.toString().padStart(2, '0')+" Hours "+ ':' + 
                     minutes.toString().padStart(2, '0')+" Minutes "+ ':' +
-                    seconds.toString().padStart(2, '0')+" Seconds ";
+                    seconds.toString().padStart(2, '0')+" Seconds "+amPm;
                 document.getElementById("clock").textContent = clock;
             }
             setInterval(clock, 1000);
