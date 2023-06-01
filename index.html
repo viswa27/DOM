@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <h3>Q1. Write the code to access element which is having id as "text"</h3>
+    <pre>
+        &lt;div id="text">The Text.&lt;/div>
+        &lt;script>                                "I'm Using External Script. But for the answer i wrote in internal script."
+            let q1 = document.getElementById("text");
+            console.log(text.innerHTML);
+            text.innerHTML = "New Text.";
+        &lt;/script>
+    </pre>
+    <div id="text">The Text.</div>
+    <hr>
+    <h3>Q2. Write the code to access element which is having tag as "h1"</h3>
+    <pre>
+        &lt;h1>Heading&lt;/h1>
+        &lt;script>
+            let q2 = document.getElementsByTagName('h1')[0];
+            console.log(q2);
+            q2.style.color="blue";
+        &lt;/script>
+    </pre>
+    <h1>Heading</h1>
+    <hr>
+    <h3>Q3. Write the code to access element which is having class as "box"</h3>
+    <pre>
+        &lt;div class="box">new box&lt;/div>
+        &lt;script>
+            let q3 = document.getElementsByClassName('box');
+            console.log(q3);
+            q3[0].style.backgroundColor = "#ffff00";
+        &lt;/script>
+    </pre>
+    <div class="box">New box</div>
+    <hr>
+    <h3>Q4. "&lt;h1>Hello &lt;/h1><br>Change the heading from "Hello" to "Hello World" using DOM functions"</h3>
+    <pre>
+        &lt;h1>Hello&lt;/h1>
+        &lt;script>
+            let q4 = document.getElementsByTagName('h1')[1];
+            q4.innerHTML = "Hello World";
+        &lt;/script>
+    </pre>
+    <h1>Hello</h1>
+    <hr>
+    <h3>Q5. Create an HTML page having content as Hello world and a button named Replace Text. When user will click on
+        this button page content should be changed to "Welcome to Elevation academy"
+    </h3>
+    <pre>
+        &lt;div id="Replace">Hello World&lt;/div>
+        &lt;button onclick="newText()">Click Here for Change Text&lt;/button>
+        &lt;script>
+            function newText() {
+            document.getElementById("Replace").innerHTML = "Welcome to Elevation academy";
+            }
+        &lt;/script>
+    </pre>
+    <div id="Replace">Hello World</div>
+    <button onclick="newText()">Click Here for Change Text</button>
+    <hr>
+    <h3>Q6. "&lt;h1>Hello &lt;/h1><br>Add one style attribute and give text color as red and id attribute and give the
+        id
+        value as "heading" in the above given h1 tag using DOM functions"
+    </h3>
+    <pre>
+        &lt;h1>Hello&lt;/h1>
+        &lt;script>
+            let q6 = document.getElementsByTagName('h1')[2];
+            console.log(q6);
+            q6.style.color="red";
+            q6.setAttribute("id", "heading");
+            console.log(q6);
+        &lt;/script>
+    </pre>
+    <h1>Hello</h1>
+    <hr>
+    <h3>Q7. Create three cards on HTML page and arrange them using flex property in row or horizontal direction and also
+        create button at the bottom named "Change Flex direction". When user clicks on this button, the cards
+        arrangement should be changed to vertical direction.
+    </h3>
+    <pre>
+        &lt;style>
+            #main {
+                display: flex;
+                justify-content: space-evenly;
+            }
+
+            .cards {
+                width: 100px;
+                height: 100px;
+                background-color: burlywood;
+            }
+        &lt;/style>
+        &lt;div id="main">
+            &lt;div class="cards"></div>
+            &lt;div class="cards"></div>
+            &lt;div class="cards"></div>
+        &lt;/div>
+        &lt;button onclick="flexDir()">Change Flex Direction&lt;/button>
+        &lt;script>
+
+        &lt;/script>
+    </pre>
+    <div id="main">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+    </div><br>
+    <button onclick="flex()">Change Flex Direction</button>
+    <hr>
+    <h3>Q9. Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every
+        second
+    </h3>
+    <pre>
+        &lt;style>
+            #clock {
+                text-align: center;
+            }
+        &lt;/style>
+        &lt;h2 id="clock">&lt;/h2>
+        &lt;script>
+            function clock(){
+                let time = new Date();
+                let hour = time.getHours();
+                let minutes = time.getMinutes();
+                let seconds = time.getSeconds();
+                let clock = hour.toString().padStart(2, '0')+" Hours "+ ':' + 
+                    minutes.toString().padStart(2, '0')+" Minutes "+ ':' +
+                    seconds.toString().padStart(2, '0')+" Seconds ";
+                document.getElementById("clock").textContent = clock;
+            }
+            setInterval(clock, 1000);
+        &lt;/script>
+    </pre>
+    <h2 id="clock"></h2><hr>
+    <script src="Script.js"></script>
+</body>
+
+</html>

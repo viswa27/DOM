@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(78, 143, 173);
+}
+#main {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: burlywood;
+}
+
+#clock {
+    text-align: center;
+}
