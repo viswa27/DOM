@@ -17,3 +17,78 @@ body {
 #clock {
     text-align: center;
 }
+
+.rules {
+    display: inline-block;
+    position: absolute;
+    right: 2%;
+    color: white;
+    font-size: 32px;
+}
+
+#start {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.question {
+    display: block;
+    position: absolute;
+    top: 30%;
+    left: 43%;
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.line {
+    color: white;
+    background-color: #ffffff;
+    height: 10px;
+    border: none;
+    position: relative;
+    top: 400px;
+}
+
+.random {
+    width: 150px;
+    height: 130px;
+    position: absolute;
+    background-color: #ffffff;
+    top: 42.5%;
+    left: 46%;
+    font-size: 100px;
+    text-align: center;
+    padding-top: 20px;
+    z-index: 999;
+}
+
+.result {
+    position: absolute;
+    top: 65%;
+    left: 70%;
+    font-size: 40px;
+    color: #ffffff;
+}
+
+#answer {
+    background-color: transparent;
+    border-color: #ffffff;
+    width: 150px;
+    height: 80px;
+    position: absolute;
+    top: 65%;
+    left: 15%;
+}
+
+.check {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 78%;
+    left: 16%;
+}
+
+.correct {
+    background-color: greenyellow;
+}

@@ -46,3 +46,47 @@ function clock(){
     document.getElementById("clock").textContent = clock;
 }
 setInterval(clock, 1000);
+
+const random= Math.floor(Math.random()*100) + 1;
+let chances = 100;
+let score = 0;
+function numberCheck() {
+    const input = parseInt(document.getElementById("answer").value);
+    const body = document.body;
+    const result = document.getElementsByClassName("result");
+    const output = document.getElementsByClassName("random");
+    const scoreOut = document.getElementsByClassName("score");
+    const chancesOut = document.getElementsByClassName("chances");
+
+    if(input===random){
+        result.textContent = "🤩🤩 Hurray You Won 🤩🤩";
+        output.textContent = random;
+        score = chances;
+        chancesOut.textContent = "💯 Chances: "+ chances;
+        scoreOut.textContent = "🥇 Highscore: "+ score;
+        body.classList.add("correct");
+        if (chances < score || score === "-") {
+            score = chances;
+            localStorage.setItem("score", score);
+            scoreOut.textContent = "🥇 Highscore: "+ score;
+        }
+    }
+    else if (input < random){
+        result.textContent = "Your Guess Is Low";
+        chances--;
+        chancesOut.textContent = "💯 Chances: "+ chances; 
+    }
+    else{
+        result.textContent = "Your Guess Is High";
+        chances--;
+        chancesOut.textContent = "💯 Chances: "+ chances;
+    }
+}
+
+function resetGame() {
+    chances = 0;
+    dodocument.getElementsByClassName("result").textContent = "Start guessing...";
+    document.getElementsByClassName("random").textContent = "?";
+    document.getElementById("answer").value = "";
+    document.body.classList.remove("correct");
+}

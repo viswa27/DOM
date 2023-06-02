@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guess Game</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <button id="start" onclick="resetGame()">Play Agian</button>
+    <div class="rules">(Between 1 and 100)</div>
+    <div class="question">Guess My Number!</div>
+    <div class="random">?</div>
+    <hr class="line">
+    <input type="number" id="answer" min="1" max="100">
+    <div class="result">Start guessing...</div>
+    <button class="check" onclick="numberCheck()">Check!</button>
+    <div class="chances">💯 Chances: 100</div>
+    <div class="score">🥇 Highscore: 0</div>
+    <script src="Script.js"></script>
+</body>
+</html>
