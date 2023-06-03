@@ -126,6 +126,38 @@
     </div><br>
     <button onclick="flex()">Change Cards Direction to vertical</button>
     <hr>
+    <h3>Q8. What’s the difference between window vs document?</h3>
+    <table>
+        <tr>
+            <th>Window</th>
+            <th>Document</th>
+        </tr>
+        <tr>
+            <td>Global scope: Variables and functions declared in the global scope are accessible as properties and
+                methods of the window object.</td>
+            <td>DOM manipulation: The document object provides methods and properties for manipulating the HTML
+                structure of the web page, such as selecting elements, modifying their attributes or content, creating
+                new elements, and handling events.</td>
+        </tr>
+        <tr>
+            <td>Browsing context: It represents the environment in which the document is displayed, including the
+                browser's dimensions, location, and navigation history.</td>
+            <td>Access to page content: It allows access to the various parts of the web page, including the HTML
+                structure, text content, form data, and embedded media like images or videos.</td>
+        </tr>
+        <tr>
+            <td>Methods: The window object provides methods for interacting with the browser, such as opening new
+                windows or tabs, navigating to different URLs, and displaying alerts or prompts.</td>
+            <td>Styling: The document object provides access to CSS stylesheets and allows modifying or adding styles to
+                elements dynamically.</td>
+        </tr>
+        <tr>
+            <td>Properties: It exposes properties that provide information about the browser window, such as its
+                dimensions, location, and scroll position.</td>
+            <td>Events: It enables event handling by providing methods to attach event listeners to HTML elements and
+                respond to user interactions or other events.</td>
+        </tr>
+    </table>
     <h3>Q9. Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every
         second
     </h3>
@@ -155,7 +187,8 @@
             setInterval(clock, 1000);
         &lt;/script>
     </pre>
-    <h2 id="clock"></h2><hr>
+    <h2 id="clock"></h2>
+    <hr>
     <h3>Q10 <a href="index1.html">Number guess game</a></h3>
     <script src="Script.js"></script>
 </body>

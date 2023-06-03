@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,65 @@
     <title>Number Guess Game</title>
     <link rel="stylesheet" href="Style.css">
 </head>
-<body>
-    <button id="start" onclick="resetGame()">Play Agian</button>
+
+<body class="worng">
+    <button id="start" onclick="resetGame()">Play Again</button>
     <div class="rules">(Between 1 and 100)</div>
     <div class="question">Guess My Number!</div>
     <div class="random">?</div>
     <hr class="line">
     <input type="number" id="answer" min="1" max="100">
     <div class="result">Start guessing...</div>
-    <button class="check" onclick="numberCheck()">Check!</button>
+    <button id="check" onclick="numberCheck()">Check!</button>
     <div class="chances">💯 Chances: 100</div>
-    <div class="score">🥇 Highscore: 0</div>
-    <script src="Script.js"></script>
+    <div class="score">🥇 Highscore: <span id="highScore">0</span></div>
+    
+    <script>
+        let random = Math.floor(Math.random() * 100) + 1;
+        let chances = 100;
+        let highScore = localStorage.getItem("highScore") || 0;
+        document.getElementById("highScore").textContent = highScore;
+
+        function numberCheck() {
+            const input = parseInt(document.getElementById("answer").value);
+            const body = document.body;
+            const result = document.querySelector(".result");
+            const output = document.querySelector(".random");
+            const chancesOut = document.querySelector(".chances");
+            const scoreOut = document.querySelector("#highScore");
+
+            if (input === random) {
+                result.textContent = "🤩🤩 Hurray You Won! 🤩🤩";
+                output.textContent = random;
+                highScore = chances;
+                chancesOut.textContent = "💯 Chances: " + chances;
+                if (chances < highScore || highScore === "0") {
+                    localStorage.setItem("highScore", highScore);
+                }
+                scoreOut.textContent = highScore;
+                body.classList.add("correct");
+                document.getElementById("check").style.display = "none";
+            } else if (input < random) {
+                result.textContent = "Your Guess Is Low";
+                chances--;
+                chancesOut.textContent = "💯 Chances: " + chances;
+            } else {
+                result.textContent = "Your Guess Is High";
+                chances--;
+                chancesOut.textContent = "💯 Chances: " + chances;
+            }
+        }
+
+        function resetGame() {
+            chances = 100;
+            random = Math.floor(Math.random() * 100) + 1;
+            document.querySelector(".result").textContent = "Start guessing...";
+            document.querySelector(".random").textContent = "?";
+            document.getElementById("answer").value = "";
+            document.body.classList.remove("correct");
+            document.getElementById("check").style.display = "inline-block";
+        }
+    </script>
 </body>
+
 </html>
